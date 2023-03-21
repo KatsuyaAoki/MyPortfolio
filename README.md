@@ -1,0 +1,2 @@
+# MyPortfolio
+Nuxt.jsとmicroCMSを使って自身のポートフォリオサイトを作る
