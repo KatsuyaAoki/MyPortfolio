@@ -1,34 +1,3 @@
-<script setup lang="ts">
-import { Blog } from "../.nuxt/types/blog";
-
-const { data } = await useMicroCMSGetList<Blog>({
-  endpoint: "blogs",
-});
-</script>
-
 <template>
-  <h1>記事一覧</h1>
-  <ul>
-    <li v-for="blog in data?.contents" :key="blog.id">
-      <NuxtLink :to="`/${blog.id}`">
-        <img
-          :src="blog.eyecatch?.url"
-          :width="blog.eyecatch?.width"
-          :height="blog.eyecatch?.height"
-          alt=""
-        />
-        <div>
-          <div>
-            {{ blog.category?.name }}
-          </div>
-          <div>
-            {{ blog.title }}
-          </div>
-          <div>
-            {{ blog.publishedAt ?? blog.createdAt }}
-          </div>
-        </div>
-      </NuxtLink>
-    </li>
-  </ul>
+    <h1>Top Page</h1>
 </template>
