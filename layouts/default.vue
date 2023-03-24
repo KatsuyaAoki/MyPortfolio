@@ -1,9 +1,9 @@
 <template>
   <div class="mx-auto max-w-7xl">
-    <header>ここにヘッダー</header>
-      <div class="mx-auto max-w-3xl">
+    <Header />
+      <div class="mx-auto max-w-3xl mt-16">
         <slot/>
       </div>
-    <footer>ここにフッター</footer>
+    <Footer />
   </div>
 </template>
