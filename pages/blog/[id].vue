@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { dateFormat } from "~~/utils/dateFormat";
-import { Blog } from "../../.nuxt/types/blog";
+import { Blog } from "~~/.nuxt/types/blog";
 
 const { params } = useRoute();
 
@@ -11,6 +11,7 @@ const { data } = await useMicroCMSGetListDetail<Blog>({
 console.log(data)
 </script>
 <template>
+  <div class="pt-20 pb-32 max-w-3xl m-auto">
     <template v-if="data">
       <h1 class="text-3xl font-semibold">
         {{ data.title }}
@@ -22,8 +23,8 @@ console.log(data)
         class="mt-10"
         alt=""
       />
-      <div class="mt-4 flex gap-4 flex-row items-center">
-        <div class="rounded border-2 border-indigo-600 px-1.5 py-0.5 text-sm font-semibold text-indigo-600">
+      <div class="mt-4 flex gap-3 flex-row items-center">
+        <div class="rounded border-2 px-1.5 py-0.5 text-sm font-semibold text-gray-500">
           {{ data.category?.name }}
         </div>
         <div class="text-sm text-gray-700">
@@ -35,4 +36,5 @@ console.log(data)
       class="prose mt-10"
       ></div>
     </template>
-  </template>
+  </div>
+</template>
