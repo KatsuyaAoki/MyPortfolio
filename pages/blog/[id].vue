@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { dateFormat } from "~~/utils/dateFormat";
-import { Blog } from "~~/.nuxt/types/blog";
+import { Blog } from "~~/types/blog";
 
 const { params } = useRoute();
 
