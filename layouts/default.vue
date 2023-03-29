@@ -1,9 +1,14 @@
 <template>
   <div class="">
     <Header />
-      <div class="mt-16">
+      <main class="pt-16">
         <slot/>
-      </div>
+      </main>
     <Footer />
   </div>
 </template>
+<style>
+main {
+  min-height: calc(100vh - 40px); /* 100vh - footer hight */
+}
+</style>
