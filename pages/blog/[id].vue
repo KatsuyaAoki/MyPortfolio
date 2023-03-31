@@ -8,7 +8,6 @@ const { data } = await useMicroCMSGetListDetail<Blog>({
   endpoint: "blogs",
   contentId: Array.isArray(params.id) ? params.id[0] : params.id,
 });
-console.log(data)
 </script>
 <template>
   <div class="pt-20 pb-32 max-w-3xl m-auto">

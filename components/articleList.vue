@@ -2,6 +2,7 @@
 import { Blog } from "~~/types/blog";
 import { dateFormat } from "~~/utils/dateFormat";
 import { ARTICLE_PER_PAGE } from "~~/settings/siteSettings";
+import { shortTitle } from "~~/utils/functions";
 
 type Props = {
     pageId: number,
@@ -18,15 +19,6 @@ const { data } = await useMicroCMSGetList<Blog>({
 });
 
 const totalPages = Math.ceil(data.value.totalCount / ARTICLE_PER_PAGE);
-
-const shortTitle = (title: any) => {
-  const MAX_LENGTH = 41;
-  if(title.length > MAX_LENGTH) {
-    return title.substring(0, MAX_LENGTH) + '...';
-  } else {
-    return title;
-  }
-};
 </script>
 <template>
   <ul class="grid grid-cols-1 gap-10">
