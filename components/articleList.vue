@@ -4,16 +4,14 @@ import { dateFormat } from "~~/utils/dateFormat";
 import { ARTICLE_PER_PAGE } from "~~/settings/siteSettings";
 import { shortTitle } from "~~/utils/functions";
 
-type Props = {
-    pageId: number,
-};
+const { params } = useRoute();
+const pageId = Number(params.id || 1);
 
-const { pageId } = defineProps<Props>();
 const { data } = await useMicroCMSGetList<Blog>({
   endpoint: "blogs",
   queries: {
     limit: ARTICLE_PER_PAGE,
-    offset: (pageId - 1)*ARTICLE_PER_PAGE,
+    offset: (pageId-1)*ARTICLE_PER_PAGE,
     orders: '-publishedAt',
   },
 });
@@ -25,7 +23,7 @@ const totalPages = Math.ceil(data.value.totalCount / ARTICLE_PER_PAGE);
     <li v-for="blog in data?.contents" :key="blog.id">
       <NuxtLink 
       :to="`/blog/${blog.id}`"
-      class="flex flex-row gap-8 items-center justify-center"
+      class="flex flex-row gap-8 items-center justify-center duration-300 hover:opacity-60"
       >
         <img
          :src="blog.eyecatch?.url"
