@@ -27,6 +27,7 @@ const sections: Array[] = [
   <section :id="sections[1].subtitle" class="py-32 bg-gray-50">
     <div class="max-w-3xl mx-auto px-8">
       <SectionTitle :section-title="sections[1].subtitle"/>
+      <TopWorks />
       <div class="mt-16 text-center">
         <ButtonMore :slug="sections[1].link" />
       </div>

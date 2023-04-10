@@ -10,9 +10,9 @@ const { data } = await useMicroCMSGetListDetail<Blog>({
 });
 </script>
 <template>
-  <div class="pt-20 pb-32 max-w-3xl m-auto">
+  <div class="pt-20 pb-32 max-w-3xl m-auto px-8 md:px-0">
     <template v-if="data">
-      <h1 class="text-3xl font-semibold">
+      <h1 class="text-3xl font-bold">
         {{ data.title }}
       </h1>
       <img

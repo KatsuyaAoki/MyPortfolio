@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <Header />
-      <main class="pt-16 w-screen">
+      <main class="pt-16 max-w-screen">
         <slot/>
       </main>
     <Footer />
